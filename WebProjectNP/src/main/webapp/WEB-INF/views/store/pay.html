@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    
+    <meta charset="UTF-8">
+    <title>Sample Payment</title>
+</head>
+<body>
+    <button onclick="requestPay()">결제하기</button> <!-- 결제하기 버튼 생성 -->
+    <script>
+    var IMP = window.IMP; // 생략가능
+    IMP.init("imp54826391");
+	var frm = document.form;
+
+
+	function requestPay(){
+		   IMP.request_pay({
+			  pg: "html5_inicis",
+			  pay_method: "card",
+			  merchant_uid: "ord" + new Date().getTime(),
+			  name: "벌이", //상품명
+			  amount: 1,	//총가격
+			  buyer_email: "yang@naver.com", 
+				buyer_name: "하니>",
+				buyer_tel: "010-2222-3333",
+				buyer_addr: "서울시 강남",
+				buyer_postcode: "123-2"
+		   }, function (rsp){
+			  if(rsp.success){
+				  var msg = '결제가 완료되었습니다.';
+				 frm.submit();
+			  }
+			  else {
+				 var msg = '결제에 실패하였습니다.';
+				 msg += '에러내용 : ' + rsp.error_msg;
+			  }
+			  alert(msg);
+		   });
+		
+	}
+
+    </script>
+</body>
+</html>

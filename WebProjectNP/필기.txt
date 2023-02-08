@@ -1,0 +1,88 @@
+[admin > 관리자]
+- 상품관리 : prdManager
+	- 조회 : prdSelect
+		- 검색 : prdSearch
+		- 통계(차트) : prdChart
+	- 등록 : prdAdd
+	- 수정 : prdEdit
+	- 삭제 : prdDel
+	
+- 회원관리 : memManager
+	- 조회 : memSelect
+		- 검색 : memSearch
+		- 통계(차트) : memChart
+	- 수정 : memEdit
+	
+- 게시판관리 : boardManager
+	- 조회 : boardSelect
+		- 검색 : boardSearch
+	- 등록(공지) : noticeAdd
+	- 수정 : boardEdit
+	- 삭제 : boardDel
+
+
+[member > 회원] 
+- 회원가입 : signUp
+	- 아이디 중복체크 : idCheck
+	- 주소 찾기(API사용)
+- 로그인 : login
+	- 아이디 찾기 : idFind
+	- 비번 찾기 : pwFind
+	- 비회원주문내역 : nonmemOrder
+- 마이페이지 (xx님, 적립금, 등급) : mypage
+	- 회원정보 : memInfo
+	- 장바구니 : memCart
+	- 관심상품 : memLike
+	- 구매내역 : memOrder
+	- 구독 : memSubs
+	- 배송현황 : memDeliver
+	- 회원탈퇴 : memOut
+
+
+[board > 자유게시판]
+	- 목록 : boardList
+		- 상세 : boardDetail
+		- 수정 : boardEdit
+		- 삭제 : boardDel
+	- 글쓰기 : boardWrite
+	- 댓글 : boardComment
+		- 삭제 : boardCommentDel
+	
+[qna]
+	- 목록 : qnaList
+		- 상세 : qnaDetail
+		- 수정 : qnaEdit
+		- 삭제 : qnaDel
+	- 글쓰기 : qnaWrite
+	- 댓글 : qnaComment
+		- 삭제 : qnaCommentDel
+
+
+[store > 상품]
+- 카테고리 : mainCategory
+	- 상세 카테고리 : subCategory
+		- 상품상세 : prdDetail
+		- 관심상품등록 : likeAdd
+		- 장바구니담기 : cartAdd
+		- 후기(댓글) : review
+		
+- 결제 : pay
+	- 바로결제 : directPay
+		- 결제완료 : PayOk
+
+		
+[recommend > 분석 / 추천]
+- 등록(팝업) : recommendAdd
+- 분석(차트/추천) : recommendChart
+
+
+[tip > 꿀팁]
+- 조회 : tipList
+- 상세 : tipDetail
+
+[notice > 공지사항]
+- 조회 : noticeList
+- 상세 : noticeDetail
+
+[nonmember > 비회원]
+- 비회원주문내역 : nonmemOrder
